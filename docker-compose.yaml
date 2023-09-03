@@ -35,4 +35,7 @@ services:
     depends_on:
       - backend
 
+volumes:
+  mongodb_data:
+
 
