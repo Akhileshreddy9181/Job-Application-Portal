@@ -2,7 +2,7 @@
 FROM node
 
 # Set the working directory inside the container
-WORKDIR /app
+WORKDIR /backend
 
 # Copy the package.json and package-lock.json
 COPY package*.json .

@@ -2,7 +2,7 @@
 FROM node AS build
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /frontend
 
 # Copy the package.json and package-lock.json
 COPY package*.json .
@@ -22,7 +22,7 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 
 # Copy static assets from builder stage
-COPY --from=build /app/build .
+COPY --from=build /frontend/build .
 
 # Containers run nginx with global directives and daemon off
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
