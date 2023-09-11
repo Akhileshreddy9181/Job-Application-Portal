@@ -7,9 +7,12 @@ WORKDIR /frontend
 # Copy the package.json and package-lock.json
 COPY package*.json .
 
+# Copy the frontend code
+COPY . .
+
 # Install dependencies and build app
 RUN npm install
-COPY . .
+
 RUN npm run build
 
 # ---- Production Stage ----
